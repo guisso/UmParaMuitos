@@ -61,7 +61,31 @@ public class ClienteTest {
     }
 
     @Test
-    public void clientesDiferentes() {
+    public void clientesDiferentesId() {
+        try {
+            Cliente c1 = new Cliente(0L, 27339913025L, "Luis Guisso");
+            Cliente c2 = new Cliente(1L, 27339913025L, "Luis Guisso");
+
+            assertNotEquals(c1, c2);
+        } catch (Exception ex) {
+            Logger.getLogger(UtilTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @Test
+    public void clientesDiferentesCpf() {
+        try {
+            Cliente c1 = new Cliente(0L, 14948020079L, "Luis Guisso");
+            Cliente c2 = new Cliente(0L, 27339913025L, "Luis Guisso");
+
+            assertNotEquals(c1, c2);
+        } catch (Exception ex) {
+            Logger.getLogger(UtilTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @Test
+    public void clientesDiferentesNome() {
         try {
             Cliente c1 = new Cliente(0L, 27339913025L, "Luis GuissoX");
             Cliente c2 = new Cliente(0L, 27339913025L, "Luis Guisso");
