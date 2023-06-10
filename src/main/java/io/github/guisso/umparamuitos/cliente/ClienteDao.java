@@ -36,7 +36,10 @@ package io.github.guisso.umparamuitos.cliente;
 import io.github.guisso.umparamuitos.repositorio.Dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -55,14 +58,23 @@ public class ClienteDao
 
     @Override
     public String getUpdateStatement() {
-        return "update " + TABLE + 
-                " set cpf = ?, nome = ?"
+        return "update " + TABLE
+                + " set cpf = ?, nome = ?"
                 + " where id = ?";
     }
 
     @Override
     public void composeSaveOrUpdateStatement(PreparedStatement pstmt, Cliente e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        try {
+            pstmt.setLong(1, e.getCpf());
+            pstmt.setString(2, e.getNome());
+
+            if (e.getId() != null) {
+                pstmt.setLong(3, e.getId());
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
