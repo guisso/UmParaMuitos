@@ -49,13 +49,15 @@ public class ClienteDao
 
     @Override
     public String getSaveStatement() {
-        return "insert into " + TABLE + " (id, cpf, nome) "
-                + "values (default, ?, ?)";
+        return "insert into " + TABLE + " (id, cpf, nome)"
+                + " values (default, ?, ?)";
     }
 
     @Override
     public String getUpdateStatement() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "update " + TABLE + 
+                " set cpf = ?, nome = ?"
+                + " where id = ?";
     }
 
     @Override
