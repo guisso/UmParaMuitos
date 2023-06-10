@@ -61,7 +61,7 @@ public interface IDao<T> {
     public T findById(Long id);
 
     // Get all
-    public String getFindAllStatment();
+    public String getFindAllStatement();
 
     public List<T> findAll();
 

@@ -69,7 +69,7 @@ public class ClienteDao
     }
 
     @Override
-    public String getFindAllStatment() {
+    public String getFindAllStatement() {
         return "select id, cpf, nome from " + TABLE;
     }
 
