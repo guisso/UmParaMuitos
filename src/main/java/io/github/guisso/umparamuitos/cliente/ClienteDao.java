@@ -54,7 +54,7 @@ public class ClienteDao
     }
 
     @Override
-    public String getUpdateStatment() {
+    public String getUpdateStatement() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

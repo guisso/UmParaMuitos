@@ -49,7 +49,7 @@ public interface IDao<T> {
     // Save
     public String getSaveStatment();
 
-    public String getUpdateStatment();
+    public String getUpdateStatement();
 
     public void composeSaveOrUpdateStatement(PreparedStatement pstmt, T e);
 
