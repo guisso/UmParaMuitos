@@ -58,7 +58,18 @@ public class ClienteTest {
         } catch (Exception ex) {
             Logger.getLogger(UtilTest.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
 
+    @Test
+    public void clientesDiferentes() {
+        try {
+            Cliente c1 = new Cliente(0L, 27339913025L, "Luis GuissoX");
+            Cliente c2 = new Cliente(0L, 27339913025L, "Luis Guisso");
+
+            assertNotEquals(c1, c2);
+        } catch (Exception ex) {
+            Logger.getLogger(UtilTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }
