@@ -48,7 +48,7 @@ public class ClienteDao
     public static final String TABLE = "cliente";
 
     @Override
-    public String getSaveStatment() {
+    public String getSaveStatement() {
         return "insert into " + TABLE + " (id, cpf, nome) "
                 + "values (default, ?, ?)";
     }

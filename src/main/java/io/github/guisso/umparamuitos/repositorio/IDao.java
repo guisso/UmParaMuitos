@@ -47,7 +47,7 @@ import java.util.List;
 public interface IDao<T> {
 
     // Save
-    public String getSaveStatment();
+    public String getSaveStatement();
 
     public String getUpdateStatement();
 
