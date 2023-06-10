@@ -51,7 +51,7 @@ public class Cliente
     public Cliente() {
     }
 
-    public Cliente(Long cpf, String nome, Long id)
+    public Cliente(Long id, Long cpf, String nome)
             throws Exception {
         super(id);
         setCpf(cpf);
