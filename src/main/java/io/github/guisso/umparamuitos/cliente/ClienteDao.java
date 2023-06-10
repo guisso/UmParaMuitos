@@ -70,7 +70,7 @@ public class ClienteDao
 
     @Override
     public String getFindAllStatment() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "select id, cpf, nome from " + TABLE;
     }
 
     @Override
