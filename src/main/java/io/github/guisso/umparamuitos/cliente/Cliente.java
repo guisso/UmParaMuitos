@@ -34,6 +34,8 @@
 package io.github.guisso.umparamuitos.cliente;
 
 import io.github.guisso.umparamuitos.entidade.Entidade;
+import io.github.guisso.umparamuitos.util.Util;
+import java.util.Objects;
 
 /**
  *
@@ -41,8 +43,80 @@ import io.github.guisso.umparamuitos.entidade.Entidade;
  */
 public class Cliente
         extends Entidade {
-    
+
     private Long cpf;
-    
+    private String nome;
+
+    //<editor-fold defaultstate="collapsed" desc="Constructors">
+    public Cliente() {
+    }
+
+    public Cliente(Long cpf, String nome, Long id)
+            throws Exception {
+        super(id);
+        setCpf(cpf);
+        setNome(nome);
+    }
+    //</editor-fold>
+
+    //<editor-fold defaultstate="collapsed" desc="Getters/Setters">
+    public Long getCpf() {
+        return cpf;
+    }
+
+    public final void setCpf(Long cpf)
+            throws Exception {
+        if (!Util.isCpfValido(cpf)) {
+            throw new Exception("CPF inválido");
+        }
+
+        this.cpf = cpf;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public final void setNome(String nome)
+            throws Exception {
+        if (nome.length() > 45) {
+            throw new Exception("Nome não pode ter mais do que 45 caracteres");
+        }
+
+        this.nome = nome;
+    }
+    //</editor-fold>
+
+    //<editor-fold defaultstate="collapsed" desc="hashCode/equals/toString">
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 89 * hash + Objects.hashCode(getId());
+        hash = 89 * hash + Objects.hashCode(this.cpf);
+        hash = 89 * hash + Objects.hashCode(this.nome);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Cliente other = (Cliente) obj;
+
+        return this.hashCode() == other.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return nome + '[' + cpf + ']';
+    }
+    //</editor-fold>
 
 }
