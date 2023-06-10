@@ -64,7 +64,7 @@ public class ClienteDao
     }
 
     @Override
-    public String getFindByIdStatment() {
+    public String getFindByIdStatement() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

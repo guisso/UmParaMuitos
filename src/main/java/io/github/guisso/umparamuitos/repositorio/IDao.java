@@ -56,7 +56,7 @@ public interface IDao<T> {
     public Long saveOrUpdate(T e);
 
     // Get by ID
-    public String getFindByIdStatment();
+    public String getFindByIdStatement();
 
     public T findById(Long id);
 
