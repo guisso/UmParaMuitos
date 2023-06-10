@@ -33,11 +33,14 @@
  */
 package io.github.guisso.umparamuitos.util;
 
+import io.github.guisso.umparamuitos.cliente.Cliente;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 /**
- * 
+ *
  * @author Luis Guisso &lt;luis.guisso at ifnmg.edu.br&gt;
  * @see https://junit.org/junit5/
  */
@@ -67,7 +70,7 @@ public class UtilTest {
     }
 
     @Test
-    public void isCpfInalido() {
+    public void isCpfInvalido() {
         assertFalse(Util.isCpfValido(8747359049L));
     }
 
