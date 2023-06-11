@@ -47,7 +47,7 @@ public class ClienteTest {
 
     public ClienteTest() {
     }
-    
+
     /**
      * https://www.baeldung.com/junit-assert-exception
      */
@@ -104,6 +104,29 @@ public class ClienteTest {
         } catch (Exception ex) {
             Logger.getLogger(UtilTest.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @Test
+    public void persistenciaCliente() {
+        Cliente c1, c2, c3;
+
+        try {
+            c1 = new Cliente(null, 12868356079L, "Luis Guisso");
+
+            long id = new ClienteDao().saveOrUpdate(c1);
+
+            // Cliente persistido em tese
+            c2 = new Cliente(id, 12868356079L, "Luis Guisso");
+
+            // Cliente persistido de fato
+            c3 = new ClienteDao().findById(id);
+
+            assertEquals(c2, c3);
+
+        } catch (Exception ex) {
+            Logger.getLogger(ClienteTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
 }
