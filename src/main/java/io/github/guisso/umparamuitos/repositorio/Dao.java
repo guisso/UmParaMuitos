@@ -68,7 +68,7 @@ public abstract class Dao<T>
             // try-with-resources
             try ( PreparedStatement preparedStatement
                     = DbConnection.getConnection().prepareStatement(
-                            getSaveStatment(),
+                            getSaveStatement(),
                             Statement.RETURN_GENERATED_KEYS)) {
 
                 // Assemble the SQL statement with the data (->?)
@@ -98,7 +98,7 @@ public abstract class Dao<T>
             // Update existing record
             try ( PreparedStatement preparedStatement
                     = DbConnection.getConnection().prepareStatement(
-                            getUpdateStatment())) {
+                            getUpdateStatement())) {
 
                 // Assemble the SQL statement with the data (->?)
                 composeSaveOrUpdateStatement(preparedStatement, e);
@@ -125,7 +125,7 @@ public abstract class Dao<T>
 
         try ( PreparedStatement preparedStatement
                 = DbConnection.getConnection().prepareStatement(
-                        getFindByIdStatment())) {
+                        getFindByIdStatement())) {
 
             // Assemble the SQL statement with the id
             preparedStatement.setLong(1, id);
@@ -153,7 +153,7 @@ public abstract class Dao<T>
 
         try ( PreparedStatement preparedStatement
                 = DbConnection.getConnection().prepareStatement(
-                        getFindAllStatment())) {
+                        getFindAllStatement())) {
 
             // Show the full sentence
             System.out.println(">> SQL: " + preparedStatement);
