@@ -74,6 +74,11 @@ public interface IDao<T> {
 
     public String getFindAllOnTrashStatement();
     public List<T> findAllOnTrash();
+    
+    // TODO Definitive removal
+    // get...:String not needed because only one wildcard is required, the ID
+    // public void removeById(Long id);
+    // public void remove(T e);
 
     // Assembly objects
     public T extractObject(ResultSet resultSet);
