@@ -37,7 +37,7 @@ package io.github.guisso.umparamuitos;
  *
  * @author Luis Guisso <luis.guisso at ifnmg.edu.br>
  */
-public class UmParaMuitos2 {
+public class UmParaMuitos {
     
     public static void main(String[] args) {
         
