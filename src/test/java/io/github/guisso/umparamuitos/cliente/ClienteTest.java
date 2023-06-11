@@ -47,6 +47,16 @@ public class ClienteTest {
 
     public ClienteTest() {
     }
+    
+    /**
+     * https://www.baeldung.com/junit-assert-exception
+     */
+    @Test
+    public void clienteCpfInvalido() {
+        Exception ex = assertThrows(Exception.class, () -> {
+            new Cliente(null, 12345678901L, "Ana Zaira");
+        });
+    }
 
     @Test
     public void clientesIguais() {
