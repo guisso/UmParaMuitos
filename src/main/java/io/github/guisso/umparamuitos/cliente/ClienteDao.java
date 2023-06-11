@@ -122,7 +122,23 @@ public class ClienteDao
 
     @Override
     public Cliente extractObject(ResultSet resultSet) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Cliente c = null;
+
+        try {
+            c = new Cliente();
+
+            c.setId(resultSet.getLong("id"));
+            c.setCpf(resultSet.getLong("cpf"));
+            c.setNome(resultSet.getString("nome"));
+
+            return c;
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDao.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(ClienteDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return c;
     }
 
 }
